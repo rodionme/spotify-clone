@@ -1,0 +1,21 @@
+extend ./../_template
+
+block pageTitle
+  - var pageTitle = 'Menus'
+block prepend body
+  body
+    section#page-menus.page-container.menus-page
+      nav.menu
+        ul.menu__list
+          li.menu__item
+            a.menu__link(href="") Overview
+          li.menu__item
+            a.menu__link(href="") Charts
+          li.menu__item
+            a.menu__link(href="") Genres & Moods
+          li.menu__item
+            a.menu__link(href="") New Releases
+          li.menu__item
+            a.menu__link.menu__link--active(href="") Discover
+          li.menu__item
+            a.menu__link(href="") Concerts
