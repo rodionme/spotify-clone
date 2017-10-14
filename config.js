@@ -7,7 +7,7 @@ global.config = {
       ],
       css: './src/styles/main.styl',
       img: 'src/img/**/*.{png,jpg,gif,svg}',
-      fonts: 'src/fonts/**/*.{eot,ttf,svg,otf,woff}'
+      fonts: 'src/fonts/**/*.{eot,ttf,svg,otf,woff,woff2}'
     },
     dest: {
       css: 'dist/css',
@@ -21,7 +21,7 @@ global.config = {
     css: 'src/{styles,vendor}/**/*.styl',
     html: 'src/views/**/*.pug',
     img: 'src/img/**/*.{png,jpg,gif,svg}',
-    fonts: 'src/fonts/**/*.{eot,ttf,svg,otf,woff}'
+    fonts: 'src/fonts/**/*.{eot,ttf,svg,otf,woff,woff2}'
   },
   browsers: ['last 2 versions']
 };
