@@ -1,0 +1,31 @@
+extend ./../_template
+
+block pageTitle
+  - var pageTitle = 'Buttons'
+block prepend body
+  body
+    include ./../icons/_icon-template
+    include ../icons/_icon-more
+    include ../icons/_icon-plus
+
+
+    section#page-buttons.page-container.buttons-page
+      button.button Regular button
+      button.button.button--rounded
+        +icon('icon-more')
+      button.button.button--action Action button
+      button.button.button--inverted Inverted button
+      button.button.button--alt Alternative button
+      button.button.button--transparent
+        +icon('icon-plus')
+
+      br
+
+      a.button(href="") Regular button
+      a.button.button--rounded(href="")
+        +icon('icon-more')
+      a.button.button--action(href="") Action button
+      a.button.button--inverted(href="") Inverted button
+      a.button.button--alt(href="") Alternative button
+      a.button.button--transparent(href="")
+        +icon('icon-plus')
