@@ -1,0 +1,58 @@
+extend ./../_template
+
+block pageTitle
+  - var pageTitle = 'Headers'
+block prepend body
+  body
+    include ./../icons/_icon-template
+    include ./../icons/_icon-more
+
+
+    section#page-headers.page-container.headers-page
+      header.header
+        .header__thumb
+          img.header__thumb-img(src="//via.placeholder.com/300x300")
+
+        .header__content
+          h4.header__overhead Made for Meuser1
+          h2.header__title Discover Weekly
+
+          .header__description
+            p.
+              Your weekly mixtape of fresh music. Enjoy new discoveries and deep cuts chosen just for you. Updated every
+               Monday, so save your favourites!
+
+            p Made for <a href="#">meuser1</a> by <a href="#">Spotify</a>. 30 songs, 1 hr 47 min
+
+          .header__actions
+            .header__buttons
+              button.header__button.button.button--action Play
+              button.header__button.button.button--action-alt Following
+              button.header__button.button.button--rounded
+                +icon('icon-more')
+
+            .header__additional
+              span.header__additional-text FOLLOWER
+              span.header__additional-text 1
+
+      br
+      br
+
+      header.header
+        .header__thumb.header__thumb--small
+          img.header__thumb-img(src="//via.placeholder.com/300x300")
+
+        .header__content
+          h4.header__overhead User
+          h2.header__title meuser1
+
+          .header__actions
+            .header__buttons
+              button.header__button.button.button--rounded
+                +icon('icon-more')
+
+            .header__additional.header__additional--alt
+              span.header__additional-text.
+                By proceeding, you agree to give Spotify access to the image you choose to upload. Please make sure you
+                 have the right to upload the image. We'll only use your image for your profile picture and/or playlist
+                 cover art.
