@@ -1,0 +1,21 @@
+extend ./../_template
+
+block pageTitle
+  - var pageTitle = 'Filters'
+block prepend body
+  body
+    include ./../icons/_icon-template
+    include ./../icons/_icon-x
+    include ./../icons/_icon-search
+
+
+    section#page-filters.page-container.filters-page
+      .filter
+        input.filter__input(type="text", placeholder="Filter")
+
+        .filter__icon
+          +icon('icon-search')
+
+        button.filter__button(type="button")
+          .filter__icon
+            +icon('icon-x')

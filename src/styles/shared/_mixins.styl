@@ -11,3 +11,14 @@ ellipsis()
   white-space nowrap
   overflow hidden
   text-overflow ellipsis
+
+placeholder($color)
+  &:-ms-input-placeholder // IE 10+
+    color $color
+
+  &::-moz-placeholder // Firefox 19-51
+    color $color
+    opacity 1
+
+  &::placeholder
+    color $color
