@@ -1,0 +1,75 @@
+extend ./../_template
+
+block pageTitle
+  - var pageTitle = 'Context Menus'
+block prepend body
+  body
+    include ./../icons/_icon-template
+    include ./../icons/_icon-chevron-right
+    include ./../icons/_icon-copy
+
+
+    section#page-context-menus.page-container.context-menus-page
+      .context-menu(style="top:0;left:200px;")
+        ul.context-menu__list
+          li.context-menu__list-item
+            a.context-menu__link(href="") Add to Queue
+
+          li.context-menu__list-item.context-menu__list-divider
+            a.context-menu__link(href="") Go to Song Radio
+
+          li.context-menu__list-item
+            a.context-menu__link(href="") Go to Artist
+
+          li.context-menu__list-item.context-menu__list-divider
+            a.context-menu__link(href="") Go to Album
+
+          li.context-menu__list-item
+            a.context-menu__link(href="") Save to Your Library
+
+          li.context-menu__list-item.context-menu__list-item--expandable(data-position="left")
+            span.context-menu__link Add to Playlist
+            .context-menu__icon
+              +icon('icon-chevron-right')
+
+            ul.context-menu__list
+              li.context-menu__list-item.context-menu__list-divider
+                a.context-menu__link(href="") New Playlist
+
+              li.context-menu__list-item
+                a.context-menu__link(href="") Liked from Radio
+
+          li.context-menu__list-item.context-menu__list-item--expandable(data-position="right")
+            span.context-menu__link Share
+            .context-menu__icon
+              +icon('icon-chevron-right')
+
+            ul.context-menu__list
+              li.context-menu__list-item
+                a.context-menu__link(href="") Facebook
+
+              li.context-menu__list-item
+                a.context-menu__link(href="") Messenger
+
+              li.context-menu__list-item
+                a.context-menu__link(href="") Twitter
+
+              li.context-menu__list-item
+                a.context-menu__link(href="") Telegram
+
+              li.context-menu__list-item
+                a.context-menu__link(href="") Skype
+
+              li.context-menu__list-item
+                a.context-menu__link(href="") Tumblr
+
+              li.context-menu__list-item
+                .context-menu__icon
+                  +icon('icon-copy')
+                a.context-menu__link(href="") Copy Song Link
+
+              li.context-menu__list-item
+                a.context-menu__link(href="") Copy Embed Code
+
+              li.context-menu__list-item
+                a.context-menu__link(href="") Copy Spotify URI
