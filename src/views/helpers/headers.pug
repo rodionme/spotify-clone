@@ -39,6 +39,25 @@ block prepend body
       br
 
       header.header
+        .header__content
+          h4.header__overhead Artist
+          h2.header__title Shallou
+
+          .header__actions
+            .header__buttons
+              button.header__button.button.button--action Play
+              button.header__button.button.button Follow
+              button.header__button.button.button--rounded
+                +icon('icon-more')
+
+            .header__additional
+              span.header__additional-text MONTHLY LISTENERS
+              span.header__additional-text 2,139,446
+
+      br
+      br
+
+      header.header
         .header__thumb.header__thumb--small
           img.header__thumb-img(src="//via.placeholder.com/300x300")
 
