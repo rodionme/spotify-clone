@@ -65,7 +65,7 @@ gulp.task('fonts', function () {
 
 
 // Local development server
-gulp.task('server', function () {
+gulp.task('server', function (done) {
   browserSync.init({
     server: 'dist',
     port: 8888,
@@ -78,9 +78,13 @@ gulp.task('server', function () {
       scroll: true
     }
   });
-
-  browserSync.watch(config.build.dest.full).on('change', browserSync.reload);
+  done();
 });
+
+function reload(done) {
+  browserSync.reload();
+  done();
+}
 
 
 // Project assembly
@@ -89,11 +93,11 @@ gulp.task('build', gulp.parallel('views', 'styles', 'images', 'fonts'));
 
 // Watching changes
 gulp.task('watch', function () {
-  gulp.watch(config.watch.html, gulp.series('views'));
-  gulp.watch(config.watch.css, gulp.series('styles'));
-  gulp.watch(config.watch.img, gulp.series('images'));
-  gulp.watch(config.watch.fonts, gulp.series('fonts'));
+  gulp.watch(config.watch.html, gulp.series('views', reload));
+  gulp.watch(config.watch.css, gulp.series('styles', reload));
+  gulp.watch(config.watch.img, gulp.series('images', reload));
+  gulp.watch(config.watch.fonts, gulp.series('fonts', reload));
 });
 
 
-gulp.task('default', gulp.series('build', gulp.parallel('watch', 'server')));
+gulp.task('default', gulp.series('clean', 'build', 'server', 'watch'));
