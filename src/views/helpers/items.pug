@@ -1,0 +1,131 @@
+extend ./../_template
+
+block pageTitle
+  - var pageTitle = 'Items'
+block prepend body
+  body
+    include ./../icons/_icon-template
+    include ./../icons/_icon-plus
+    include ./../icons/_icon-play
+    include ./../icons/_icon-more
+
+
+    section#page-items.page-container.items-page
+      .example-wrapper(style="float:left;width:216px;margin-right:20px")
+        .item
+          .item__thumb
+            img.item__thumb-img(src="//via.placeholder.com/999x999")
+
+            a.item__link(href="#")
+              .item__overlay
+
+                button.button.button--transparent
+                  +icon('icon-plus')
+                button.button.button--rounded
+                  +icon('icon-play')
+                button.button.button--transparent
+                  +icon('icon-more')
+
+          .item__description
+            a.item__title(href="#") Daily Mix 2
+            span.item__text Foals, Kasabian, The National and more
+            span.item__additional Made for meuser1
+
+      .example-wrapper(style="float:left;width:216px;margin-right:20px")
+        .item
+          .item__thumb.item__thumb--rounded
+            img.item__thumb-img(src="//via.placeholder.com/999x999")
+
+            a.item__link(href="#")
+              .item__overlay
+
+                button.button.button--transparent
+                  +icon('icon-plus')
+                button.button.button--rounded
+                  +icon('icon-play')
+                button.button.button--transparent
+                  +icon('icon-more')
+
+          .item__description.item__description--centered
+            a.item__title(href="#") Johann Sebastian Bach
+            span.item__additional 835,221 followers
+
+      .example-wrapper(style="float:left;width:216px;margin-right:20px")
+        .item
+          .item__thumb
+            img.item__thumb-img(src="//via.placeholder.com/999x999")
+
+            a.item__link(href="#")
+              .item__overlay.item__overlay--vertical
+
+                .item__icon
+                  +icon('icon-more')
+                span.item__title.item__title--big Pop
+
+      br(style="clear:both")
+      br
+
+      .example-wrapper(style="float:left;width:696px")
+        .item
+          .item__thumb
+            a.item__link(href="#")
+              img.item__thumb-img(src="//via.placeholder.com/999x333")
+
+          .item__description.item__description--centered
+              span.item__text Series, specials, and more
+
+      br(style="clear:both")
+      br
+
+      .example-wrapper(style="float:left;width:696px")
+        .item.item--horizontal
+          a.item__link(href="#")
+            .item__thumb.item__thumb--horizontal.item__thumb--fixed
+              img.item__thumb-img(src="//via.placeholder.com/999x999")
+
+              .item__overlay
+                button.button.button--rounded
+                  +icon('icon-play')
+
+            .item__description
+              span.item__title Release Radar
+              span.item__text.
+                Never miss a new release! Catch all the latest music from artists you care about, plus new singles picked
+                just for you. Update every Friday.
+              span.item__additional Playlist - by Spotify
+
+      br(style="clear:both")
+      br
+
+      .example-wrapper(style="float:left;width:696px")
+        .item.item--horizontal
+          a.item__link(href="#")
+            .item__thumb.item__thumb--horizontal.item__thumb--fixed
+              img.item__thumb-img(src="//via.placeholder.com/999x999")
+
+            .item__description
+              span.item__title Spotify Singles
+              span.item__additional Sep 6, 2017
+
+      br(style="clear:both")
+      br
+
+      .example-wrapper(style="float:left;width:300px")
+        .item.item--horizontal
+          a.item__link(href="#")
+            .item__thumb.item__thumb--horizontal.item__thumb--fixed-small
+              img.item__thumb-img(src="//via.placeholder.com/999x999")
+
+            .item__description
+              span.item__title Pop Chillout
+              span.item__text spotify
+              span.item__additional 266,050 listeners
+
+      .example-wrapper(style="float:left;width:300px")
+        .item.item--horizontal
+          a.item__link(href="#")
+            .item__thumb.item__thumb--horizontal.item__thumb--fixed-x-small.item__thumb--rounded
+              img.item__thumb-img(src="//via.placeholder.com/999x999")
+
+            .item__description
+              span.item__title Whethan
