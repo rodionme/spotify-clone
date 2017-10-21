@@ -1,0 +1,19 @@
+extend ./../_template
+
+block pageTitle
+  - var pageTitle = 'Headings'
+block prepend body
+  body
+    section#page-headings.page-container.headings-page
+      h2.title.title--big Browse
+      h2.title.title--big
+        em Showing results for
+        |  mu
+      h2.title.title--big.title--underlined Albums
+
+      br
+
+      h4.title Featured Charts
+      h4.title.title--underlined Popular Near Dnipropetrovsk
+      h4.title Recommended Songs
+      h6.subtitle Based on the songs in the playlist
