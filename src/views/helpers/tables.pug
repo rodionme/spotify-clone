@@ -1,0 +1,695 @@
+extend ./../_template
+
+block pageTitle
+  - var pageTitle = 'Tables'
+block prepend body
+  body
+    include ./../icons/_icon-template
+    include ./../icons/_icon-chevron-up
+    include ./../icons/_icon-chevron-down
+    include ./../icons/_icon-play
+    include ./../icons/_icon-pause
+    include ./../icons/_icon-volume
+    include ./../icons/_icon-plus
+    include ./../icons/_icon-check
+    include ./../icons/_icon-x
+    include ./../icons/_icon-heart-active
+    include ./../icons/_icon-heart
+    include ./../icons/_icon-ban
+    include ./../icons/_icon-released
+    include ./../icons/_icon-more
+    include ./../icons/_icon-time
+    include ./../icons/_icon-thumbs-up
+
+
+    section#page-tables.page-container.tables-page
+      .table
+        .table__header
+          .table__row
+            .table__cell.table__cell--header.table__cell--play
+            .table__cell.table__cell--header.table__cell--save
+            .table__cell.table__cell--header.table__cell--title
+              span.table__cell-content Title
+            .table__cell.table__cell--header.table__cell--artist
+              span.table__cell-content Artist
+            .table__cell.table__cell--header.table__cell--album
+              span.table__cell-content Album
+            .table__cell.table__cell--header.table__cell--like
+            .table__cell.table__cell--header.table__cell--more
+
+        .table__body
+          .table__row.now-playing
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--save
+              button.table__button.table__button--save-library.button.button--transparent
+                +icon('icon-plus')
+                +icon('icon-check')
+                +icon('icon-x')
+            .table__cell.table__cell--title
+              span.table__cell-content Talking to Myself
+            .table__cell.table__cell--artist
+              a.table__cell-content.table__cell-content--linked(href="#") Linkin Park
+            .table__cell.table__cell--album
+              a.table__cell-content.table__cell-content--linked(href="#") One More Light
+            .table__cell.table__cell--like
+              button.table__button.table__button--dislike.button.button--transparent
+                +icon('icon-heart-active')
+              button.table__button.table__button--like.button.button--transparent
+                +icon('icon-heart')
+              button.table__button.table__button--remove.button.button--transparent
+                +icon('icon-ban')
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+
+          .table__row.selected.added
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--save
+              button.table__button.table__button--save-library.button.button--transparent
+                +icon('icon-plus')
+                +icon('icon-check')
+                +icon('icon-x')
+            .table__cell.table__cell--title
+              span.table__cell-content Roter Sand
+            .table__cell.table__cell--artist
+              a.table__cell-content.table__cell-content--linked(href="#") Rammstein
+            .table__cell.table__cell--album
+              a.table__cell-content.table__cell-content--linked(href="#") XXI - Klavier
+            .table__cell.table__cell--like
+              button.table__button.table__button--dislike.button.button--transparent
+                +icon('icon-heart-active')
+              button.table__button.table__button--like.button.button--transparent
+                +icon('icon-heart')
+              button.table__button.table__button--remove.button.button--transparent
+                +icon('icon-ban')
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+
+          .table__row.liked
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--save
+              button.table__button.table__button--save-library.button.button--transparent
+                +icon('icon-plus')
+                +icon('icon-check')
+                +icon('icon-x')
+            .table__cell.table__cell--title
+              span.table__cell-content All Apologies - MTV Unplugged
+              span.explicit-badge Explicit
+            .table__cell.table__cell--artist
+              a.table__cell-content.table__cell-content--linked(href="#") Nirvana
+            .table__cell.table__cell--album
+              a.table__cell-content.table__cell-content--linked(href="#") Nirvana
+            .table__cell.table__cell--like
+              button.table__button.table__button--dislike.button.button--transparent
+                +icon('icon-heart-active')
+              button.table__button.table__button--like.button.button--transparent
+                +icon('icon-heart')
+              button.table__button.table__button--remove.button.button--transparent
+                +icon('icon-ban')
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+
+      br
+
+      .table
+        .table__header
+          .table__row
+            .table__cell.table__cell--header.table__cell--play
+            .table__cell.table__cell--header.table__cell--number #
+            .table__cell.table__cell--header.table__cell--save
+            .table__cell.table__cell--header.table__cell--title
+              span.table__cell-content Title
+            .table__cell.table__cell--header.table__cell--more
+            .table__cell.table__cell--header.table__cell--time
+              +icon('icon-time')
+            .table__cell.table__cell--header.table__cell--rating
+              +icon('icon-thumbs-up')
+
+        .table__body
+          .table__row.now-playing
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--number
+              span.table__cell-content 1
+            .table__cell.table__cell--save
+              button.table__button.table__button--save-library.button.button--transparent
+                +icon('icon-plus')
+                +icon('icon-check')
+                +icon('icon-x')
+            .table__cell.table__cell--title
+              span.table__cell-content Talking to Myself
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+            .table__cell.table__cell--time
+              span.table__cell-content 3:50
+            .table__cell.table__cell--rating
+              span.table__cell-content |||||||||||||||||||||||
+
+          .table__row.selected
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--number
+              span.table__cell-content 2
+            .table__cell.table__cell--save
+              button.table__button.table__button--save-library.button.button--transparent
+                +icon('icon-plus')
+                +icon('icon-check')
+                +icon('icon-x')
+            .table__cell.table__cell--title
+              span.table__cell-content Roter Sand
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+            .table__cell.table__cell--time
+              span.table__cell-content 3:50
+            .table__cell.table__cell--rating
+              span.table__cell-content |||||||||||||||||||||||
+
+          .table__row
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--number
+              span.table__cell-content 3
+            .table__cell.table__cell--save
+              button.table__button.table__button--save-library.button.button--transparent
+                +icon('icon-plus')
+                +icon('icon-check')
+                +icon('icon-x')
+            .table__cell.table__cell--title
+              span.table__cell-content All Apologies - MTV Unplugged
+              span.explicit-badge Explicit
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+            .table__cell.table__cell--time
+              span.table__cell-content 3:50
+            .table__cell.table__cell--rating
+              span.table__cell-content |||||||||||||||||||||||
+
+      br
+
+      .table
+        .table__header
+          .table__row
+            .table__cell.table__cell--header.table__cell--play
+            .table__cell.table__cell--header.table__cell--save
+            .table__cell.table__cell--header.table__cell--title
+              span.table__cell-content Title
+            .table__cell.table__cell--header.table__cell--artist
+              span.table__cell-content Artist
+            .table__cell.table__cell--header.table__cell--album
+              span.table__cell-content Album
+            .table__cell.table__cell--header.table__cell--more
+            .table__cell.table__cell--header.table__cell--time
+              +icon('icon-time')
+            .table__cell.table__cell--header.table__cell--rating
+              +icon('icon-thumbs-up')
+
+        .table__body
+          .table__row.now-playing
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--save
+              button.table__button.table__button--save-library.button.button--transparent
+                +icon('icon-plus')
+                +icon('icon-check')
+                +icon('icon-x')
+            .table__cell.table__cell--title
+              span.table__cell-content Talking to Myself
+            .table__cell.table__cell--artist
+              a.table__cell-content.table__cell-content--linked(href="#") Linkin Park
+            .table__cell.table__cell--album
+              a.table__cell-content.table__cell-content--linked(href="#") One More Light
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+            .table__cell.table__cell--time
+              span.table__cell-content 3:50
+            .table__cell.table__cell--rating
+              span.table__cell-content |||||||||||||||||||||||
+
+          .table__row.selected
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--save
+              button.table__button.table__button--save-library.button.button--transparent
+                +icon('icon-plus')
+                +icon('icon-check')
+                +icon('icon-x')
+            .table__cell.table__cell--title
+              span.table__cell-content Roter Sand
+            .table__cell.table__cell--artist
+              a.table__cell-content.table__cell-content--linked(href="#") Rammstein
+            .table__cell.table__cell--album
+              a.table__cell-content.table__cell-content--linked(href="#") XXI - Klavier
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+            .table__cell.table__cell--time
+              span.table__cell-content 3:50
+            .table__cell.table__cell--rating
+              span.table__cell-content |||||||||||||||||||||||
+
+          .table__row
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--save
+              button.table__button.table__button--save-library.button.button--transparent
+                +icon('icon-plus')
+                +icon('icon-check')
+                +icon('icon-x')
+            .table__cell.table__cell--title
+              span.table__cell-content All Apologies - MTV Unplugged
+              span.explicit-badge Explicit
+            .table__cell.table__cell--artist
+              a.table__cell-content.table__cell-content--linked(href="#") Nirvana
+            .table__cell.table__cell--album
+              a.table__cell-content.table__cell-content--linked(href="#") Nirvana
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+            .table__cell.table__cell--time
+              span.table__cell-content 3:50
+            .table__cell.table__cell--rating
+              span.table__cell-content |||||||||||||||||||||||
+
+      br
+
+      .table
+        .table__body
+          .table__row.selected
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--save-radio
+              button.table__button.table__button--save-radio.button.button--alt Add
+            .table__cell.table__cell--title
+              span.table__cell-content Talking to Myself
+            .table__cell.table__cell--artist
+              a.table__cell-content.table__cell-content--linked(href="#") Linkin Park
+            .table__cell.table__cell--album
+              a.table__cell-content.table__cell-content--linked(href="#") One More Light
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+            .table__cell.table__cell--time
+              span.table__cell-content 3:50
+
+          .table__row.now-playing
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--save-radio
+              button.table__button.table__button--save-radio.button.button--alt Add
+            .table__cell.table__cell--title
+              span.table__cell-content Roter Sand
+            .table__cell.table__cell--artist
+              a.table__cell-content.table__cell-content--linked(href="#") Rammstein
+            .table__cell.table__cell--album
+              a.table__cell-content.table__cell-content--linked(href="#") XXI - Klavier
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+            .table__cell.table__cell--time
+              span.table__cell-content 3:50
+
+          .table__row
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--save-radio
+              button.table__button.table__button--save-radio.button.button--alt Add
+            .table__cell.table__cell--title
+              span.table__cell-content All Apologies - MTV Unplugged
+              span.explicit-badge Explicit
+            .table__cell.table__cell--artist
+              a.table__cell-content.table__cell-content--linked(href="#") Nirvana
+            .table__cell.table__cell--album
+              a.table__cell-content.table__cell-content--linked(href="#") Nirvana
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+            .table__cell.table__cell--time
+              span.table__cell-content 3:50
+
+      br
+
+      .table
+        .table__header
+          .table__row
+            .table__cell.table__cell--header.table__cell--play
+            .table__cell.table__cell--header.table__cell--save
+            .table__cell.table__cell--header.table__cell--title
+              span.table__cell-content Title
+              span.table__icon.table__icon--sorting
+                +icon('icon-chevron-up')
+                +icon('icon-chevron-down')
+            .table__cell.table__cell--header.table__cell--artist
+              span.table__cell-content Artist
+              span.table__icon.table__icon--sorting
+                +icon('icon-chevron-up')
+                +icon('icon-chevron-down')
+            .table__cell.table__cell--header.table__cell--album
+              span.table__cell-content Album
+              span.table__icon.table__icon--sorting
+                +icon('icon-chevron-up')
+                +icon('icon-chevron-down')
+            .table__cell.table__cell--header.table__cell--released.sorted.sorted--asc
+              +icon('icon-released')
+              span.table__icon.table__icon--sorting
+                +icon('icon-chevron-up')
+                +icon('icon-chevron-down')
+            .table__cell.table__cell--header.table__cell--more
+            .table__cell.table__cell--header.table__cell--time.sorted.sorted--desc
+              +icon('icon-time')
+              span.table__icon.table__icon--sorting
+                +icon('icon-chevron-up')
+                +icon('icon-chevron-down')
+
+        .table__body
+          .table__row.selected
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--save
+              button.table__button.table__button--save-library.button.button--transparent
+                +icon('icon-plus')
+                +icon('icon-check')
+                +icon('icon-x')
+            .table__cell.table__cell--title
+              span.table__cell-content Talking to Myself
+            .table__cell.table__cell--artist
+              a.table__cell-content.table__cell-content--linked(href="#") Linkin Park
+            .table__cell.table__cell--album
+              a.table__cell-content.table__cell-content--linked(href="#") One More Light
+            .table__cell.table__cell--released
+              span.table__cell-content a day ago
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+            .table__cell.table__cell--time
+              span.table__cell-content 1:11
+
+          .table__row.now-playing
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--save
+              button.table__button.table__button--save-library.button.button--transparent
+                +icon('icon-plus')
+                +icon('icon-check')
+                +icon('icon-x')
+            .table__cell.table__cell--title
+              span.table__cell-content Roter Sand
+            .table__cell.table__cell--artist
+              a.table__cell-content.table__cell-content--linked(href="#") Rammstein
+            .table__cell.table__cell--album
+              a.table__cell-content.table__cell-content--linked(href="#") XXI - Klavier
+            .table__cell.table__cell--released
+              span.table__cell-content 5 days ago
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+            .table__cell.table__cell--time
+              span.table__cell-content 3:50
+
+          .table__row
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--save
+              button.table__button.table__button--save-library.button.button--transparent
+                +icon('icon-plus')
+                +icon('icon-check')
+                +icon('icon-x')
+            .table__cell.table__cell--title
+              span.table__cell-content All Apologies - MTV Unplugged
+              span.explicit-badge Explicit
+            .table__cell.table__cell--artist
+              a.table__cell-content.table__cell-content--linked(href="#") Nirvana
+            .table__cell.table__cell--album
+              a.table__cell-content.table__cell-content--linked(href="#") Nirvana
+            .table__cell.table__cell--released
+              span.table__cell-content 2017-02-17
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+            .table__cell.table__cell--time
+              span.table__cell-content 9:17
+      br
+
+      .table
+        .table__header
+          .table__row
+            .table__cell.table__cell--header.table__cell--play
+            .table__cell.table__cell--header.table__cell--number #
+            .table__cell.table__cell--header.table__cell--position
+            .table__cell.table__cell--header.table__cell--save
+            .table__cell.table__cell--header.table__cell--title
+              span.table__cell-content Title
+            .table__cell.table__cell--header.table__cell--artist
+              span.table__cell-content Artist
+            .table__cell.table__cell--header.table__cell--more
+            .table__cell.table__cell--header.table__cell--count
+              span.table__cell-content Daily Plays
+
+        .table__body
+          .table__row.now-playing
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--number
+              span.table__cell-content 1
+            .table__cell.table__cell--header.table__cell--position
+              span.table__cell-content &mdash;
+            .table__cell.table__cell--save
+              button.table__button.table__button--save-library.button.button--transparent
+                +icon('icon-plus')
+                +icon('icon-check')
+                +icon('icon-x')
+            .table__cell.table__cell--title
+              span.table__cell-content Talking to Myself
+            .table__cell.table__cell--artist
+              a.table__cell-content.table__cell-content--linked(href="#") Linkin Park
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+            .table__cell.table__cell--count
+              span.table__cell-content 7,113,735
+
+          .table__row.selected.added
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--number
+              span.table__cell-content 2
+            .table__cell.table__cell--header.table__cell--position
+              span.table__cell-content.position.position--up
+            .table__cell.table__cell--save
+              button.table__button.table__button--save-library.button.button--transparent
+                +icon('icon-plus')
+                +icon('icon-check')
+                +icon('icon-x')
+            .table__cell.table__cell--title
+              span.table__cell-content Roter Sand
+            .table__cell.table__cell--artist
+              a.table__cell-content.table__cell-content--linked(href="#") Rammstein
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+            .table__cell.table__cell--count
+              span.table__cell-content 3,807,680
+
+          .table__row
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--number
+              span.table__cell-content 3
+            .table__cell.table__cell--header.table__cell--position
+              span.table__cell-content.position.position--down
+            .table__cell.table__cell--save
+              button.table__button.table__button--save-library.button.button--transparent
+                +icon('icon-plus')
+                +icon('icon-check')
+                +icon('icon-x')
+            .table__cell.table__cell--title
+              span.table__cell-content All Apologies - MTV Unplugged
+              span.explicit-badge Explicit
+            .table__cell.table__cell--artist
+              a.table__cell-content.table__cell-content--linked(href="#") Nirvana
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+            .table__cell.table__cell--count
+              span.table__cell-content 2,855,328
+
+          .table__row
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--number
+              span.table__cell-content 4
+            .table__cell.table__cell--header.table__cell--position
+              span.table__cell-content.position.position--new
+            .table__cell.table__cell--save
+              button.table__button.table__button--save-library.button.button--transparent
+                +icon('icon-plus')
+                +icon('icon-check')
+                +icon('icon-x')
+            .table__cell.table__cell--title
+              span.table__cell-content Gorgeous
+            .table__cell.table__cell--artist
+              a.table__cell-content.table__cell-content--linked(href="#") Taylor Swift
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+            .table__cell.table__cell--count
+              span.table__cell-content 256,589
+      br
+
+      .table
+        .table__body
+          .table__row.now-playing
+            .table__cell.table__cell--thumb
+              img.table__thumb(src="//via.placeholder.com/100x100")
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--number
+              span.table__cell-content 1
+            .table__cell.table__cell--save
+              button.table__button.table__button--save-library.button.button--transparent
+                +icon('icon-plus')
+                +icon('icon-check')
+                +icon('icon-x')
+            .table__cell.table__cell--title
+              span.table__cell-content Talking to Myself
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+            .table__cell.table__cell--count
+              span.table__cell-content 7,113,735
+
+          .table__row.selected.added
+            .table__cell.table__cell--thumb
+              img.table__thumb(src="//via.placeholder.com/100x100")
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--number
+              span.table__cell-content 2
+            .table__cell.table__cell--save
+              button.table__button.table__button--save-library.button.button--transparent
+                +icon('icon-plus')
+                +icon('icon-check')
+                +icon('icon-x')
+            .table__cell.table__cell--title
+              span.table__cell-content Roter Sand
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+            .table__cell.table__cell--count
+              span.table__cell-content 3,807,680
+
+          .table__row
+            .table__cell.table__cell--thumb
+              img.table__thumb(src="//via.placeholder.com/100x100")
+            .table__cell.table__cell--play
+              button.table__button.table__button--play-indicator.button.button--transparent
+                +icon('icon-volume')
+              button.table__button.table__button--toggle.button.button--rounded
+                +icon('icon-play')
+                +icon('icon-pause')
+            .table__cell.table__cell--number
+              span.table__cell-content 3
+            .table__cell.table__cell--save
+              button.table__button.table__button--save-library.button.button--transparent
+                +icon('icon-plus')
+                +icon('icon-check')
+                +icon('icon-x')
+            .table__cell.table__cell--title
+              span.table__cell-content Gorgeous
+            .table__cell.table__cell--more
+              button.table__button.table__button--more.button.button--transparent
+                +icon('icon-more')
+            .table__cell.table__cell--count
+              span.table__cell-content 256,589

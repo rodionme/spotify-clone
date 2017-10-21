@@ -1,0 +1,351 @@
+// TODO: Add wide row tables (concerts)
+
+$cell-width-coef = 10
+$cell-side-padding = 10px
+$button-side = 26px
+$position-side = 5px
+
+.table
+  &__header
+    & ^[0]__row
+      height 30px
+      border-bottom 1px solid $grey-darkest
+      font-size 11px
+      letter-spacing 2px
+
+    & ^[0]__cell
+      &--released
+      &--time
+      &--rating
+        justify-content center
+
+    .icon
+      width 16px
+      height @width
+      fill $grey-light
+
+  &__body
+    & ^[0]__row
+      height 40px
+      border-bottom 1px solid $grey-darkest
+      font-size 13px
+
+      &.selected
+      &:hover
+        height @height - @border-bottom
+        margin-bottom @border-bottom + 0
+        border-bottom-width 0
+
+      &.selected
+        background-color $grey-dark
+
+      &:hover
+        background-color $grey-darkest
+
+    & ^[0]__cell
+      &--title
+        justify-content space-between
+
+      &--time
+      &--count
+        font-feature-settings 'tnum'
+
+  &__row
+    display flex
+    flex-shrink 1
+    font-weight 300
+    background-color transparent
+    cursor default
+
+    &:hover
+      .table__button
+        &--toggle
+        &--dislike
+        &--like
+        &--remove
+        &--more
+          opacity 1
+
+        &--save-library
+          .icon
+            fill #fff
+
+        &--dislike
+        &--like
+        &--remove
+          &:hover
+            .icon
+              fill #fff
+
+      .explicit-badge
+        color $grey-light
+
+    .icon-check
+    .icon-x
+      display none
+
+  &__cell
+    display flex
+    min-width 0
+    flex-shrink 1
+    align-items center
+    padding-right $cell-side-padding
+    padding-left $cell-side-padding
+    color #fff
+
+    &--header
+      text-transform uppercase
+      color $grey-light
+
+    &--thumb
+      flex-basis 0 * $cell-width-coef
+      min-width 40px
+      padding-right 0
+      padding-left 0
+
+    &--play
+      flex-basis 0 * $cell-width-coef
+      min-width $button-side + $cell-side-padding * 2
+
+      .icon
+        fill #fff
+
+        &-pause
+          display none
+
+    &--number
+      min-width 32px
+
+    &--volume
+      display none
+      flex-basis 0 * $cell-width-coef
+      min-width $button-side + $cell-side-padding * 2
+
+      .icon
+        fill #fff
+
+    &--position
+      justify-content center
+      flex-basis 0 * $cell-width-coef
+      min-width 34px
+
+    &--save
+      flex-basis 0 * $cell-width-coef
+      min-width $button-side + $cell-side-padding * 2
+
+      .icon
+        fill $grey-light
+
+    &--save-radio
+      flex-basis 0 * $cell-width-coef
+      min-width 116px
+
+    &--title
+      flex-basis 8% * $cell-width-coef
+
+    &--artist
+      flex-basis 6% * $cell-width-coef
+
+    &--album
+      flex-basis 6%  * $cell-width-coef
+
+    &--like
+      flex-basis 0 * $cell-width-coef
+      min-width $button-side * 2 + $cell-side-padding * 2
+
+      .icon
+        fill $grey-light
+
+    &--released
+      flex-basis 2.4% * $cell-width-coef
+
+    &--more
+      flex-basis 0 * $cell-width-coef
+      min-width $button-side + $cell-side-padding * 2
+
+    &--time
+      flex-basis 0 * $cell-width-coef
+      min-width 58px
+      color $grey-light
+
+    &--rating
+      flex-basis 0 * $cell-width-coef
+      min-width 90px
+      font-weight 400
+      color $grey-light
+
+    &--count
+      justify-content flex-end
+      flex-basis 0 * $cell-width-coef
+      min-width 120px
+      color $grey-light
+
+  &__cell-content
+    color inherit
+    text-decoration none
+    ellipsis()
+
+    &--linked
+      border-bottom 1px solid transparent
+
+      &:hover
+        border-bottom-color #fff
+
+  &__button
+    &:not(&--save-radio)
+      width $button-side
+      height $button-side
+
+    &--play-indicator
+    &--dislike
+      display none
+
+    &--toggle
+    &--like
+    &--remove
+    &--more
+      opacity 0
+
+  &__icon
+    &--sorting
+      display none
+      margin-left 6px
+
+      .icon
+        fill $green
+
+  &__thumb
+    max-width 100%
+
+.explicit-badge
+  padding-right 6px
+  padding-left 6px
+  border 1px solid $grey
+  border-radius 2px
+  font-weight 400
+  font-size 10px
+  line-height 1.6
+  text-transform uppercase
+  color $grey
+
+// ===================================== //
+// Column states
+// ===================================== //
+.sorted
+  &--asc
+    .table
+      &__icon--sorting
+        display flex
+
+        .icon-chevron-up
+          display none
+
+  &--desc
+    .table
+      &__icon--sorting
+        display flex
+
+        .icon-chevron-down
+          display none
+
+// ===================================== //
+// Row states
+// ===================================== //
+.now-playing
+  .table
+    &__cell
+      color $green
+
+      &--play:hover
+        .table__button--play-indicator
+          display none
+
+        .table__button--toggle
+          display flex
+
+        .icon-pause
+          display inline
+
+      &--like
+        opacity 1
+
+    &__cell-content--linked
+      &:hover
+        border-bottom-color $green
+
+    &__button
+      &--play-indicator
+        display flex
+
+      &--toggle
+        display none
+
+  .icon-play
+  .icon-pause
+    display none
+
+.liked
+  .table__button
+    &--dislike
+      display flex
+
+    &--remove
+    &--like
+      display none
+
+.added
+  .icon-plus
+    display none
+
+  .icon-check
+    display flex
+
+  .table__button:hover
+    .icon-check
+      display none
+
+    .icon-x
+      display flex
+
+// ===================================== //
+// Cell states
+// ===================================== //
+.position
+  position relative
+  overflow visible
+
+  &--up
+  &--down
+  &--new
+    &:after
+      content ''
+      position absolute
+      left 0
+      transform translate(-50%, -50%)
+      pointer-events none
+
+  &--up
+  &--down
+    &:after
+      width 0
+      height 0
+      border solid transparent
+      border-width $position-side
+
+  &--up
+    &:after
+      top -($position-side / 2)
+      border-bottom-color $green-light
+
+  &--down
+    &:after
+      top ($position-side / 2)
+      border-top-color $red
+
+  &--new
+    &:after
+      top 0
+      width ($position-side * 2)
+      height @width
+      border-radius 50%
+      background-color $blue
