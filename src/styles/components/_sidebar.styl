@@ -1,0 +1,99 @@
+.sidebar
+  display flex
+  flex-direction column
+  width 350px
+  max-width 400px
+  height 100%
+  background-color $black-light
+
+  &__menu
+    flex-shrink 1
+    min-height 0
+    overflow auto
+
+  &__section
+    margin-top 20px
+    margin-bottom 20px
+
+    & + &
+      margin-top 30px
+
+  &__title
+    margin-top 2px
+    margin-bottom 2px
+    padding-left 24px
+    font-weight 300
+    font-size 12px
+    text-transform uppercase
+    letter-spacing 1px
+    color $grey-light
+    cursor default
+    user-select none
+
+  &__list
+    margin-top 0
+    margin-bottom 0
+    padding-left 0
+    list-style none
+
+  &__list-item
+    border-left 4px solid transparent
+    color $grey-light
+
+    &--active
+      border-left-color $green-light
+      color #fff
+
+  &__link
+    display block
+    padding-right 24px
+    padding-left 20px
+    font-size 14px
+    line-height 32px
+    text-decoration none
+    color inherit
+    ellipsis()
+
+    &:hover
+      color #fff
+
+      & ^[0]__hint
+        display inline
+
+  &__hint
+    display none
+
+  &__footer
+    flex-shrink 0
+
+  &__new-playlist
+    height 65px
+    border-top 1px solid $grey-darkest
+
+  &__new-playlist-link
+    display flex
+    align-items center
+    height 100%
+    padding-left 24px
+    font-size 14px
+    text-decoration none
+    color $grey-light
+
+    &:hover
+      color #fff
+
+      .icon
+        fill #fff
+
+    .icon
+      width 24px
+      height @width
+      margin-right 10px
+      fill $grey-light
+
+  &__current-track
+    border-top 1px solid $grey-darkest
+
+  &__current-track-img
+    max-width 100%
+    vertical-align top

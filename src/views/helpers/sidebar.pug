@@ -1,0 +1,60 @@
+extend ./../_template
+
+block pageTitle
+  - var pageTitle = 'Sidebar'
+block prepend body
+  body
+    include ./../icons/_icon-template
+    include ./../icons/_icon-plus-alt
+
+
+    section#page-sidebar.page-container.sidebar-page(style="height:100%")
+      aside.sidebar
+        nav.sidebar__menu
+          section.sidebar__section
+            ul.sidebar__list
+              li.sidebar__list-item
+                a.sidebar__link(href="#") Browse
+              li.sidebar__list-item
+                a.sidebar__link(href="#") Radio
+
+          section.sidebar__section
+            h3.sidebar__title Your Library
+
+            ul.sidebar__list
+              li.sidebar__list-item
+                a.sidebar__link(href="#") Your Daily Mix
+              li.sidebar__list-item
+                a.sidebar__link(href="#") Recently Played
+              li.sidebar__list-item
+                a.sidebar__link(href="#") Songs
+              li.sidebar__list-item.sidebar__list-item--active
+                a.sidebar__link(href="#") Albums
+              li.sidebar__list-item
+                a.sidebar__link(href="#") Artists
+              li.sidebar__list-item
+                a.sidebar__link(href="#") Stations
+              li.sidebar__list-item
+                a.sidebar__link(href="#") Local Files
+              li.sidebar__list-item
+                a.sidebar__link(href="#") Videos
+              li.sidebar__list-item
+                a.sidebar__link(href="#") Podcasts
+
+          section.sidebar__section
+            h3.sidebar__title Playlists
+
+            ul.sidebar__list
+              li.sidebar__list-item
+                a.sidebar__link(href="#") Discover Weekly
+                  span.sidebar__hint  - by Spotify
+              li.sidebar__list-item
+                a.sidebar__link(href="#") Liked from Radio
+
+        footer.sidebar__footer
+          .sidebar__new-playlist
+            a.sidebar__new-playlist-link(href="#")
+              +icon('icon-plus-alt')
+              span New Playlist
+          .sidebar__current-track
+            img.sidebar__current-track-img(src="//via.placeholder.com/400x400")
