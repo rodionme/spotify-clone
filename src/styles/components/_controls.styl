@@ -1,0 +1,64 @@
+$width = 40px
+$height = 22px
+$label = $height
+$padding = 0px
+$border = 2px
+
+.control
+  display flex
+  justify-content space-between
+  align-items center
+
+  &__toggle
+    cursor pointer
+
+  &__label
+    margin-top 0
+    margin-bottom 0
+    font-weight 300
+    font-size 14px
+    color $grey-light
+
+    &--big
+      font-weight 600
+      font-size 18px
+      color #fff
+
+  &__checkbox
+    display none
+
+    &:checked ~ ^[0]__handler
+      background-color $green
+
+      &:after
+        left 'calc(100% - (%s - %s - %s))' % ($height $padding $border)
+        background-color #fff
+
+  &__handler
+    position relative
+    display block
+    width $width
+    height $height
+    border-radius ($height / 2)
+    border $border solid $grey
+    background-color #000
+    transition .3s ease background-color
+
+    &:after
+      content ''
+      position absolute
+      top $padding - $border
+      left $padding - $border
+      display block
+      width $label
+      height $label
+      border-radius 50%
+      background-color $grey-light
+      box-shadow 0 0 2px 2px rgba(#000, .3)
+      transition .3s ease all
+
+  &__select
+    border none
+    font-size 18px
+    color #fff
+    background-color $grey-dark

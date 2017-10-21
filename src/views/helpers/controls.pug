@@ -1,0 +1,29 @@
+extend ./../_template
+
+block pageTitle
+  - var pageTitle = 'Controls'
+block prepend body
+  body
+    section#page-controls.page-container.controls-page
+      .control
+        label.control__label.control__label--big Saved Albums Only
+        label.control__toggle
+          input.control__checkbox(name="", checked, type="checkbox")
+          .control__handler
+
+      br
+
+      .control
+        label.control__label Show friend feed
+        label.control__toggle
+          input.control__checkbox(name="", checked, type="checkbox")
+          .control__handler
+
+      br
+
+      .control
+        label.control__label.control__label--big Sorted by
+        select.control__select
+          option.control__option Artist
+          option.control__option Title
+          option.control__option Recently added
