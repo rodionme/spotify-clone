@@ -1,0 +1,16 @@
+extend ./../_template
+
+block pageTitle
+  - var pageTitle = 'Player'
+block prepend body
+  body
+    include ./../icons/_icon-template
+    include ./../icons/_icon-more
+
+
+    section#page-player.page-container.player-page
+      //+icon('icon-more')
+      section.player
+        .left-part
+        .central-part
+        .right-part
