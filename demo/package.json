@@ -1,13 +1,9 @@
 {
-  "name": "gulp-scaffold-website",
-  "version": "2.1.0",
-  "description": "Scaffold for fast website building",
+  "name": "Demo",
+  "version": "1.0.0",
+  "description": "Static demo of Spotify components",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rodionme/gulp-scaffold-website.git"
   },
   "author": "Rodion Mescheryakov",
   "bugs": {
