@@ -5,11 +5,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Rodion Mescheryakov",
+  "author": "Rodion Mescheryakov <msrodion@gmail.com>",
   "bugs": {
-    "url": "https://github.com/rodionme/gulp-scaffold-website/issues"
+    "url": "https://github.com/rodionme/spotify-clone/issues"
   },
-  "homepage": "https://github.com/rodionme/gulp-scaffold-website#readme",
+  "homepage": "https://github.com/rodionme/spotify-clone#readme",
   "devDependencies": {
     "autoprefixer": "^7.1.2",
     "browser-sync": "^2.18.13",
