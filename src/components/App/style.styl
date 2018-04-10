@@ -1,11 +1,54 @@
 @import "_shared";
-@import "./styles/*";
 
-.app {
-  text-align: center;
-}
+@font-face
+  font-family Circular
+  src url('./../../fonts/circular/circular-light.woff2') format('woff2'), url('./../../fonts/circular/circular-light.woff') format('woff')
+  font-weight 300
+  font-style normal
 
-.app-title {
-  font-size: 1.5em;
-  color: $green-light;
-}
+@font-face
+  font-family Circular
+  src url('./../../fonts/circular/circular-book.woff2') format('woff2'), url('./../../fonts/circular/circular-book.woff') format('woff')
+  font-weight 400
+  font-style normal
+
+@font-face
+  font-family Circular
+  src url('./../../fonts/circular/circular-medium.woff2') format('woff2'), url('./../../fonts/circular/circular-medium.woff') format('woff')
+  font-weight 500
+  font-style normal
+
+@font-face
+  font-family Circular
+  src url('./../../fonts/circular/circular-bold.woff2') format('woff2'), url('./../../fonts/circular/circular-bold.woff') format('woff')
+  font-weight 700
+  font-style normal
+
+@font-face
+  font-family Circular
+  src url('./../../fonts/circular/circular-black.woff2') format('woff2'), url('./../../fonts/circular/circular-black.woff') format('woff')
+  font-weight 900
+  font-style normal
+
+*
+  box-sizing border-box
+
+html
+body
+  height 100%
+
+body
+  min-width 800px
+  min-height 626px
+  margin 0
+  font-weight 400
+  font-size $base-font-size
+  font-family Circular
+  background-color #000
+
+button
+input
+  outline none
+
+.hidden
+  display none !important
