@@ -1,0 +1,49 @@
+@import "_shared";
+
+// TODO: Add hover effect (scale + color change)
+// TODO: Add big button (hover on item)
+
+.button
+  position relative
+  display inline-block
+  vertical-align middle
+  height 32px
+  padding 0 32px
+  border 1px solid #fff
+  border-radius (@height / 2)
+  font-size 11px
+  line-height @height
+  font-family inherit
+  text-transform uppercase
+  text-decoration none
+  letter-spacing 2px
+  color #fff
+  background-color transparent
+  cursor pointer
+
+  &--rounded
+    width @height
+    padding-right 4px
+    padding-left 4px
+
+  &--action
+    border-color $green
+    background-color @border-color
+
+  &--action-alt
+    color $green
+
+  &--inverted
+    border-color #fff
+    color #000
+    background-color @border-color
+
+  &--alt
+    border-color $grey
+    background-color @border-color
+
+  &--transparent
+    width @height
+    padding-right 4px
+    padding-left 4px
+    border-color transparent
