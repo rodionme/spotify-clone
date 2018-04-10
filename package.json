@@ -1,0 +1,35 @@
+{
+  "name": "spotify-clone",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Spotify clone",
+  "author": "Rodion Mescheryakov <msrodion@gmail.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodionme/spotify-clone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rodionme/spotify-clone/issues"
+  },
+  "homepage": "https://github.com/rodionme/spotify-clone#readme",
+  "scripts": {
+    "build": "npm-run-all build-css build-js",
+    "start": "npm-run-all -p watch-css start-js",
+    "build-css": "stylus src/components/**/*.styl -I src/styles",
+    "watch-css": "npm run build-css && stylus src/components/**/*.styl -I src/styles -w",
+    "build-js": "react-scripts build",
+    "start-js": "react-scripts start",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-scripts": "1.1.4"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.2",
+    "stylus": "^0.54.5"
+  }
+}

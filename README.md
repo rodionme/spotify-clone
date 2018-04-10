@@ -1,7 +1,7 @@
-Spotify Clone (under development)
+Spotify Clone
 =====================
 
-### Stylus, Pug
+### Stylus, Pug, React, Axios
 
 ```bash
 # install dependencies
