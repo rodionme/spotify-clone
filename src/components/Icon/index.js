@@ -1,4 +1,5 @@
 import React from 'react';
+import PropType from 'prop-types';
 import './style.css';
 
 export default function Icon(props) {
@@ -8,3 +9,7 @@ export default function Icon(props) {
     </svg>
   );
 }
+
+Icon.propTypes = {
+  icon: PropType.string,
+};

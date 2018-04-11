@@ -1,4 +1,5 @@
 import React from 'react';
+import PropType from 'prop-types';
 import './style.css';
 
 export default function Button(props) {
@@ -23,4 +24,9 @@ export default function Button(props) {
 
 Button.defaultProps = {
   view: 'regular',
+};
+
+Button.propTypes = {
+  children: PropType.node,
+  view: PropType.oneOf(['regular', 'rounded', 'action', 'action-alt', 'inverted', 'alt', 'transparent']),
 };
