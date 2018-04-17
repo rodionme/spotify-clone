@@ -1,0 +1,30 @@
+@import "_shared";
+
+$gutter = 12px
+
+.grid
+  display flex
+  flex-wrap wrap
+  margin-right -($gutter)
+  margin-left -($gutter)
+
+  &--x6
+    & ^[0]__item
+      width (100% / 6)
+
+  &--x4
+    & ^[0]__item
+      width (100% / 4)
+
+  &--x3
+    & ^[0]__item
+      width (100% / 3)
+
+  &--x2
+    & ^[0]__item
+      width (100% / 2)
+
+  &__item
+    flex-shrink 0
+    padding-right $gutter
+    padding-left $gutter

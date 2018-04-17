@@ -5,6 +5,7 @@ import ComplexLists from '../demo/complex-lists';
 import ContextMenus from '../demo/context-menus';
 import Controls from '../demo/controls';
 import Filters from '../demo/filters';
+import Grids from '../demo/grids';
 
 export default class App extends Component {
   render() {
@@ -14,7 +15,8 @@ export default class App extends Component {
         {/*<ComplexLists />*/}
         {/*<ContextMenus />*/}
         {/*<Controls />*/}
-        <Filters />
+        {/*<Filters />*/}
+        <Grids />
       </React.Fragment>
     );
   }
