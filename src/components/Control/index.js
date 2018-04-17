@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './style.css';
+import PropType from 'prop-types';
 
 export default class Control extends Component {
   render() {
@@ -28,3 +29,20 @@ export default class Control extends Component {
     );
   }
 }
+
+Control.defaultProps = {
+  labelSize: 'regular',
+};
+
+Control.propTypes = {
+  type: PropType.oneOf(['checkbox', 'select']),
+  label: PropType.string,
+  labelSize: PropType.oneOf(['regular', 'big']),
+  items: PropType.arrayOf(
+    PropType.shape({
+      id: PropType.number,
+      title: PropType.string,
+    }),
+  ),
+  checked: PropType.bool,
+};

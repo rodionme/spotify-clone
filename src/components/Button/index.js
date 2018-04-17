@@ -23,10 +23,13 @@ export default function Button(props) {
 }
 
 Button.defaultProps = {
+  type: 'button',
   view: 'regular',
 };
 
 Button.propTypes = {
   children: PropType.node,
+  type: PropType.oneOf(['link', 'button']),
+  link: PropType.string,
   view: PropType.oneOf(['regular', 'rounded', 'action', 'action-alt', 'inverted', 'alt', 'transparent']),
 };
