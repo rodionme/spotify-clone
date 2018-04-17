@@ -5,7 +5,7 @@ import './style.css';
 export default class ComplexListCard extends Component {
   render() {
     let { link, thumb, content } = this.props.card;
-    let isRounded = thumb && thumb.isRounded && 'complex-list-card__thumb--rounded';
+    let roundedClassName = thumb && thumb.isRounded && 'complex-list-card__thumb--rounded';
 
     return (
       <React.Fragment>
@@ -13,7 +13,7 @@ export default class ComplexListCard extends Component {
           <a className="complex-list-card__link" href={link}>
             <div className="complex-list-card__card">
               {thumb && (
-                <div className={`complex-list-card__thumb ${isRounded}`}>
+                <div className={`complex-list-card__thumb ${roundedClassName}`}>
                   <img className="complex-list-card__thumb-img" src={thumb.img} alt={content.title} />
                 </div>
               )}
