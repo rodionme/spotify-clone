@@ -3,6 +3,7 @@ import './style.css';
 import Buttons from '../demo/buttons';
 import ComplexLists from '../demo/complex-lists';
 import ContextMenus from '../demo/context-menus';
+import Controls from '../demo/controls';
 
 export default class App extends Component {
   render() {
@@ -10,7 +11,8 @@ export default class App extends Component {
       <React.Fragment>
         {/*<Buttons />*/}
         {/*<ComplexLists />*/}
-        <ContextMenus />
+        {/*<ContextMenus />*/}
+        <Controls />
       </React.Fragment>
     );
   }
