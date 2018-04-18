@@ -6,6 +6,7 @@ import ContextMenus from '../demo/context-menus';
 import Controls from '../demo/controls';
 import Filters from '../demo/filters';
 import Grids from '../demo/grids';
+import Headers from '../demo/headers';
 
 export default class App extends Component {
   render() {
@@ -16,7 +17,8 @@ export default class App extends Component {
         {/*<ContextMenus />*/}
         {/*<Controls />*/}
         {/*<Filters />*/}
-        <Grids />
+        {/*<Grids />*/}
+        <Headers />
       </React.Fragment>
     );
   }
