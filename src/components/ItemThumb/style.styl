@@ -1,1 +1,61 @@
 @import "_shared";
+
+.item-thumb
+  position relative
+  flex-shrink 0
+  overflow hidden
+  margin-bottom 7px
+  cursor pointer
+
+  &--rounded
+    border-radius 50%
+
+  &--horizontal
+    margin-bottom 0
+
+  &--fixed
+    width 96px
+    height @width
+
+  &--fixed-small
+    width 64px
+    height @width
+
+  &--fixed-x-small
+    width 44px
+    height @width
+
+  &:hover
+    & ^[0]__overlay
+      display flex
+
+  &__img
+    max-width 100%
+    vertical-align top
+
+  &__overlay
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
+    display none
+    flex-direction column
+    justify-content center
+    align-items center
+    background-color rgba(#000, .3)
+
+  &__title
+    margin-top 3px
+    margin-bottom 3px
+    font-size 16px
+    color #fff
+    text-decoration none
+    ellipsis()
+
+  // TODO: ???
+  &__icon
+    width 66px
+    height @width
+    margin-top 20px
+    margin-bottom 20px

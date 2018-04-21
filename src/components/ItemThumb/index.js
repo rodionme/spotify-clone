@@ -17,26 +17,26 @@ export default class ItemThumb extends Component {
     let overlay = this.props.overlay;
     let title = this.props.title;
     let buttons = overlay && this.props.overlay.buttons;
-    let roundedThumbClassName = thumb.isRounded ? ' item__thumb--rounded' : '';
-    let horizontalThumbClassName = thumb.isHorizontal ? ' item__thumb--horizontal' : '';
-    let fixedThumbClassName = thumb.isFixed ? ' item__thumb--fixed' : '';
-    let fixedSmallThumbClassName = thumb.isFixedSmall ? ' item__thumb--fixed-small' : '';
-    let fixedXSmallThumbClassName = thumb.isFixedXSmall ? ' item__thumb--fixed-x-small' : '';
+    let roundedThumbClassName = thumb.isRounded ? ' item-thumb--rounded' : '';
+    let horizontalThumbClassName = thumb.isHorizontal ? ' item-thumb--horizontal' : '';
+    let fixedThumbClassName = thumb.isFixed ? ' item-thumb--fixed' : '';
+    let fixedSmallThumbClassName = thumb.isFixedSmall ? ' item-thumb--fixed-small' : '';
+    let fixedXSmallThumbClassName = thumb.isFixedXSmall ? ' item-thumb--fixed-x-small' : '';
 
     return (
       <a className="item__link" href={link}>
         <div
-          className={`item__thumb
+          className={`item__thumb item-thumb
                      ${roundedThumbClassName}
                      ${horizontalThumbClassName}
                      ${fixedThumbClassName}
                      ${fixedSmallThumbClassName}
                      ${fixedXSmallThumbClassName}`}
         >
-          <img className="item__thumb-img" src={thumb.image} alt={title} />
+          <img className="item-thumb__img" src={thumb.image} alt={title} />
 
           {overlay && (
-            <div className="item__overlay item-overlay">
+            <div className="item-thumb__overlay item-overlay">
               <div className="item-overlay__buttons">
                 {buttons.map(button => (
                   <button key={button} className={`button button--${BUTTON_STYLE[button]}`}>
@@ -45,7 +45,7 @@ export default class ItemThumb extends Component {
                 ))}
               </div>
 
-              {overlay.title && <span className="item__title item__title--big">{overlay.title}</span>}
+              {overlay.title && <span className="item-thumb__title">{overlay.title}</span>}
             </div>
           )}
         </div>
