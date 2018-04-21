@@ -1,0 +1,43 @@
+@import "_shared";
+
+.menu
+  &__list
+    display flex
+    list-style none
+
+  &__item
+    position relative
+    margin-right 30px
+
+    &:last-child
+      margin-right 0
+
+  &__link
+    font-weight 300
+    font-size 12px
+    letter-spacing 2px
+    text-transform uppercase
+    text-decoration none
+    white-space nowrap
+    color $grey-light
+    transition all .3s ease
+
+    &:after
+      content ''
+      position absolute
+      bottom -8px
+      left 50%
+      transform translateX(-50%)
+      display block
+      width 30px
+      height 2px
+      background-color transparent
+
+    &--active
+      color #fff
+
+      &:after
+        background-color $green
+
+    &:hover
+      color #fff

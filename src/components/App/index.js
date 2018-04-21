@@ -8,6 +8,7 @@ import Filters from '../demo/filters';
 import Grids from '../demo/grids';
 import Headers from '../demo/headers';
 import Items from '../demo/items';
+import Menus from '../demo/menus';
 
 export default class App extends Component {
   render() {
@@ -20,7 +21,8 @@ export default class App extends Component {
         {/*<Filters />*/}
         {/*<Grids />*/}
         {/*<Headers />*/}
-        <Items />
+        {/*<Items />*/}
+        <Menus />
       </React.Fragment>
     );
   }
