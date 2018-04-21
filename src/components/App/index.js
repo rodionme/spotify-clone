@@ -7,6 +7,7 @@ import Controls from '../demo/controls';
 import Filters from '../demo/filters';
 import Grids from '../demo/grids';
 import Headers from '../demo/headers';
+import Items from '../demo/items';
 
 export default class App extends Component {
   render() {
@@ -18,7 +19,8 @@ export default class App extends Component {
         {/*<Controls />*/}
         {/*<Filters />*/}
         {/*<Grids />*/}
-        <Headers />
+        {/*<Headers />*/}
+        <Items />
       </React.Fragment>
     );
   }
