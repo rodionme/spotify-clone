@@ -1,0 +1,49 @@
+@import "_shared";
+
+.sidebar
+  display flex
+  flex-direction column
+  width 350px
+  max-width 400px
+  height 100%
+  background-color $black-light
+
+  &__menu
+    flex-shrink 1
+    min-height 0
+    overflow auto
+
+  &__footer
+    flex-shrink 0
+
+  &__new-playlist
+    height 65px
+    border-top 1px solid $grey-darkest
+
+  &__new-playlist-link
+    display flex
+    align-items center
+    height 100%
+    padding-left 24px
+    font-size 14px
+    text-decoration none
+    color $grey-light
+
+    &:hover
+      color #fff
+
+      .icon
+        fill #fff
+
+    .icon
+      width 24px
+      height @width
+      margin-right 10px
+      fill $grey-light
+
+  &__current-track
+    border-top 1px solid $grey-darkest
+
+  &__current-track-img
+    max-width 100%
+    vertical-align top

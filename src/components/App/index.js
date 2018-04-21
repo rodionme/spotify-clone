@@ -9,6 +9,7 @@ import Grids from '../demo/grids';
 import Headers from '../demo/headers';
 import Items from '../demo/items';
 import Menus from '../demo/menus';
+import Sidebars from '../demo/sidebar';
 
 export default class App extends Component {
   render() {
@@ -22,7 +23,8 @@ export default class App extends Component {
         {/*<Grids />*/}
         {/*<Headers />*/}
         {/*<Items />*/}
-        <Menus />
+        {/*<Menus />*/}
+        <Sidebars />
       </React.Fragment>
     );
   }
