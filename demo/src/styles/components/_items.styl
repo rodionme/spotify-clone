@@ -13,7 +13,6 @@
       border-radius 50%
 
     &--horizontal
-      margin-right 16px
       margin-bottom 0
 
     &--fixed
@@ -43,12 +42,10 @@
     bottom 0
     left 0
     display none
+    flex-direction column
     justify-content center
     align-items center
     background-color rgba(#000, .3)
-
-    &--vertical
-      flex-direction column
 
   &__icon
     width 66px
@@ -100,17 +97,26 @@
 .item
   &--horizontal
     display flex
+    width 100%
 
     .item__link
       display flex
-      width 100%
       text-decoration none
 
       &:hover
         background-color rgba(#fff, .2)
 
+        + .item__link
+          background-color @background-color
+
+      + .item__link
+        flex-grow 1
+
     .item__thumb
       position relative
+
+    .item__description
+      margin-left 16px
 
     .item__title
       margin-top 0
