@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Button from '../Button';
 import { BUTTONS } from '../../constants/button-views';
 import Icon from '../Icon';
+import { ICONS } from '../../constants/icons';
 
 export default class Buttons extends Component {
   render() {
@@ -10,7 +11,7 @@ export default class Buttons extends Component {
         <Button>Regular button</Button>
 
         <Button view={BUTTONS.ROUNDED}>
-          <Icon icon="more" />
+          <Icon icon={ICONS.MORE} />
         </Button>
 
         <Button view={BUTTONS.ACTION}>Action button</Button>
@@ -22,7 +23,7 @@ export default class Buttons extends Component {
         <Button view={BUTTONS.ALT}>Alternative button</Button>
 
         <Button view={BUTTONS.TRANSPARENT}>
-          <Icon icon="plus" />
+          <Icon icon={ICONS.PLUS} />
         </Button>
 
         <br />
@@ -33,7 +34,7 @@ export default class Buttons extends Component {
         </Button>
 
         <Button view={BUTTONS.ROUNDED} type="link" link="/test">
-          <Icon icon="more" />
+          <Icon icon={ICONS.MORE} />
         </Button>
 
         <Button view={BUTTONS.ACTION} type="link" link="/test">
@@ -53,7 +54,7 @@ export default class Buttons extends Component {
         </Button>
 
         <Button view={BUTTONS.TRANSPARENT} type="link" link="/test">
-          <Icon icon="plus" />
+          <Icon icon={ICONS.PLUS} />
         </Button>
       </React.Fragment>
     );

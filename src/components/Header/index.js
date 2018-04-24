@@ -4,6 +4,7 @@ import './style.css';
 import Button from '../Button';
 import { BUTTONS } from '../../constants/button-views';
 import Icon from '../Icon';
+import { ICONS } from '../../constants/icons';
 
 export default class Header extends Component {
   render() {
@@ -42,7 +43,7 @@ export default class Header extends Component {
               )}
 
               <Button className="header__button" view={BUTTONS.ROUNDED}>
-                <Icon icon="more" />
+                <Icon icon={ICONS.MORE} />
               </Button>
             </div>
 
