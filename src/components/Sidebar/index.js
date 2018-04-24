@@ -3,7 +3,6 @@ import PropType from 'prop-types';
 import './style.css';
 import Section from '../SidebarSection';
 import Icon from '../Icon';
-import { ICONS } from '../../constants/icons';
 
 export default class Sidebar extends Component {
   render() {
@@ -15,7 +14,7 @@ export default class Sidebar extends Component {
         <footer className="sidebar__footer">
           <div className="sidebar__new-playlist">
             <a className="sidebar__new-playlist-link" href="">
-              <Icon icon={ICONS.PLUS_ALT} />
+              <Icon icon="plus_alt" />
               <span>New Playlist</span>
             </a>
           </div>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ContextMenu from '../ContextMenu';
-import { ICONS } from '../../constants/icons';
 
 export default class ContextMenus extends Component {
   render() {
@@ -35,7 +34,7 @@ export default class ContextMenus extends Component {
       {
         id: 6,
         title: 'Add to Playlist',
-        icon: ICONS.CHEVRON_RIGHT,
+        icon: 'chevron_right',
         position: 'left',
         items: [
           {
@@ -54,7 +53,7 @@ export default class ContextMenus extends Component {
       {
         id: 7,
         title: 'Share',
-        icon: ICONS.CHEVRON_RIGHT,
+        icon: 'chevron_right',
         position: 'right',
         items: [
           {
@@ -91,7 +90,7 @@ export default class ContextMenus extends Component {
             id: 7,
             link: '',
             title: 'Copy Song Link',
-            icon: ICONS.COPY,
+            icon: 'copy',
           },
           {
             id: 8,

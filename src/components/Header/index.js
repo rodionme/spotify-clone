@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropType from 'prop-types';
 import './style.css';
 import Icon from '../Icon';
-import { ICONS } from '../../constants/icons';
 
 export default class Header extends Component {
   render() {
@@ -35,7 +34,7 @@ export default class Header extends Component {
                 </React.Fragment>
               )}
               <button className="header__button button button--rounded">
-                <Icon icon={ICONS.MORE} />
+                <Icon icon="more" />
               </button>
             </div>
 

@@ -9,7 +9,7 @@ export default class Items extends Component {
         image: '//via.placeholder.com/999x999',
       },
       overlay: {
-        buttons: ['PLUS', 'PLAY', 'MORE'],
+        buttons: ['plus', 'play', 'more'],
       },
       description: {
         title: 'Daily Mix 2',
@@ -25,7 +25,7 @@ export default class Items extends Component {
         isRounded: true,
       },
       overlay: {
-        buttons: ['PLUS', 'PLAY', 'MORE'],
+        buttons: ['plus', 'play', 'more'],
       },
       description: {
         isCentered: true,
@@ -40,7 +40,7 @@ export default class Items extends Component {
         image: '//via.placeholder.com/999x999',
       },
       overlay: {
-        buttons: ['MORE'],
+        buttons: ['more'],
         title: 'Pop',
       },
     };
@@ -65,7 +65,7 @@ export default class Items extends Component {
         isFixed: true,
       },
       overlay: {
-        buttons: ['PLAY'],
+        buttons: ['play'],
       },
       description: {
         isLinked: true,

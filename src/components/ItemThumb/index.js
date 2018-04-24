@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import PropType from 'prop-types';
 import './style.css';
 import Icon from '../Icon';
-import { ICONS } from '../../constants/icons';
 
 export default class ItemThumb extends Component {
   render() {
     const BUTTON_STYLE = {
-      PLUS: 'transparent',
-      PLAY: 'rounded',
-      MORE: 'transparent',
+      plus: 'transparent',
+      play: 'rounded',
+      more: 'transparent',
     };
 
     let link = this.props.link;
@@ -40,7 +39,7 @@ export default class ItemThumb extends Component {
               <div className="item-overlay__buttons">
                 {buttons.map(button => (
                   <button key={button} className={`button button--${BUTTON_STYLE[button]}`}>
-                    <Icon icon={ICONS[button]} />
+                    <Icon icon={button} />
                   </button>
                 ))}
               </div>
