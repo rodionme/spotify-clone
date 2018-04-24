@@ -1,0 +1,238 @@
+@import "_shared";
+
+// TODO: Add wide row tables (concerts)
+
+$cell-width-coef = 10
+$cell-side-padding = 10px
+$button-side = 26px
+
+.table
+  &__header
+    & ^[0]__row
+      height 30px
+      border-bottom 1px solid $grey-darkest
+      font-size 11px
+      letter-spacing 2px
+
+    & ^[0]__cell
+      &--released
+      &--time
+      &--rating
+        justify-content center
+
+    .icon
+      width 16px
+      height @width
+      fill $grey-light
+
+  &__body
+    & ^[0]__row
+      height 40px
+      border-bottom 1px solid $grey-darkest
+      font-size 13px
+
+      &.selected
+      &:hover
+        height @height - @border-bottom
+        margin-bottom @border-bottom + 0
+        border-bottom-width 0
+
+      &.selected
+        background-color $grey-dark
+
+      &:hover
+        background-color $grey-darkest
+
+    & ^[0]__cell
+      &--title
+        justify-content space-between
+
+      &--time
+      &--count
+        font-feature-settings 'tnum'
+
+  &__row
+    display flex
+    flex-shrink 1
+    font-weight 300
+    background-color transparent
+    cursor default
+
+    &:hover
+      .table__button
+        &--toggle
+        &--dislike
+        &--like
+        &--remove
+        &--more
+          opacity 1
+
+        &--save-library
+          .icon
+            fill #fff
+
+        &--dislike
+        &--like
+        &--remove
+          &:hover
+            .icon
+              fill #fff
+
+      .explicit-badge
+        color $grey-light
+
+    .icon-check
+    .icon-x
+      display none
+
+  &__cell
+    display flex
+    min-width 0
+    flex-shrink 1
+    align-items center
+    padding-right $cell-side-padding
+    padding-left $cell-side-padding
+    color #fff
+
+    &--header
+      text-transform uppercase
+      color $grey-light
+
+    &--thumb
+      flex-basis 0 * $cell-width-coef
+      min-width 40px
+      padding-right 0
+      padding-left 0
+
+    &--play
+      flex-basis 0 * $cell-width-coef
+      min-width $button-side + $cell-side-padding * 2
+
+      .icon
+        fill #fff
+
+        &-pause
+          display none
+
+    &--number
+      min-width 32px
+
+    &--volume
+      display none
+      flex-basis 0 * $cell-width-coef
+      min-width $button-side + $cell-side-padding * 2
+
+      .icon
+        fill #fff
+
+    &--position
+      justify-content center
+      flex-basis 0 * $cell-width-coef
+      min-width 34px
+
+    &--save
+      flex-basis 0 * $cell-width-coef
+      min-width $button-side + $cell-side-padding * 2
+
+      .icon
+        fill $grey-light
+
+    &--save-radio
+      flex-basis 0 * $cell-width-coef
+      min-width 116px
+
+    &--title
+      flex-basis 8% * $cell-width-coef
+
+    &--artist
+      flex-basis 6% * $cell-width-coef
+
+    &--album
+      flex-basis 6%  * $cell-width-coef
+
+    &--like
+      flex-basis 0 * $cell-width-coef
+      min-width $button-side * 2 + $cell-side-padding * 2
+
+      .icon
+        fill $grey-light
+
+    &--released
+      flex-basis 2.4% * $cell-width-coef
+
+    &--more
+      flex-basis 0 * $cell-width-coef
+      min-width $button-side + $cell-side-padding * 2
+
+    &--time
+      flex-basis 0 * $cell-width-coef
+      min-width 58px
+      color $grey-light
+
+    &--rating
+      flex-basis 0 * $cell-width-coef
+      min-width 90px
+      font-weight 400
+      color $grey-light
+
+    &--count
+      justify-content flex-end
+      flex-basis 0 * $cell-width-coef
+      min-width 120px
+      color $grey-light
+
+  &__cell-content
+    color inherit
+    text-decoration none
+    ellipsis()
+
+    &--linked
+      border-bottom 1px solid transparent
+
+      &:hover
+        border-bottom-color #fff
+
+  &__button
+    &:not(&--save-radio)
+      width $button-side
+      height $button-side
+
+    &--play-indicator
+    &--dislike
+      display none
+
+    &--toggle
+    &--like
+    &--remove
+    &--more
+      opacity 0
+
+  &__icon
+    &--sorting
+      display none
+      margin-left 6px
+
+      .icon
+        fill $green
+
+  &__thumb
+    max-width 100%
+
+// ===================================== //
+// Column states
+// ===================================== //
+.sorted
+  &--asc
+  &--desc
+    .table__icon--sorting
+      display flex
+
+  &--asc
+    .icon-chevron-up
+      display none
+
+  &--desc
+    .icon-chevron-down
+      display none
+
+

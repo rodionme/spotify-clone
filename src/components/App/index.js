@@ -10,6 +10,7 @@ import Headers from '../demo/headers';
 import Items from '../demo/items';
 import Menus from '../demo/menus';
 import Sidebars from '../demo/sidebar';
+import Tables from '../demo/tables';
 
 export default class App extends Component {
   render() {
@@ -24,7 +25,8 @@ export default class App extends Component {
         {/*<Headers />*/}
         {/*<Items />*/}
         {/*<Menus />*/}
-        <Sidebars />
+        {/*<Sidebars />*/}
+        <Tables />
       </React.Fragment>
     );
   }
