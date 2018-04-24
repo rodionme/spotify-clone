@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from '../Button';
+import { BUTTONS } from '../../constants/button-views';
 import Icon from '../Icon';
 
 export default class Buttons extends Component {
@@ -8,19 +9,19 @@ export default class Buttons extends Component {
       <React.Fragment>
         <Button>Regular button</Button>
 
-        <Button view="rounded">
+        <Button view={BUTTONS.ROUNDED}>
           <Icon icon="more" />
         </Button>
 
-        <Button view="action">Action button</Button>
+        <Button view={BUTTONS.ACTION}>Action button</Button>
 
-        <Button view="action-alt">Action Alt button</Button>
+        <Button view={BUTTONS.ACTION_ALT}>Action Alt button</Button>
 
-        <Button view="inverted">Inverted button</Button>
+        <Button view={BUTTONS.INVERTED}>Inverted button</Button>
 
-        <Button view="alt">Alternative button</Button>
+        <Button view={BUTTONS.ALT}>Alternative button</Button>
 
-        <Button view="transparent">
+        <Button view={BUTTONS.TRANSPARENT}>
           <Icon icon="plus" />
         </Button>
 
@@ -31,27 +32,27 @@ export default class Buttons extends Component {
           Regular button
         </Button>
 
-        <Button view="rounded" type="link" link="/test">
+        <Button view={BUTTONS.ROUNDED} type="link" link="/test">
           <Icon icon="more" />
         </Button>
 
-        <Button view="action" type="link" link="/test">
+        <Button view={BUTTONS.ACTION} type="link" link="/test">
           Action button
         </Button>
 
-        <Button view="action-alt" type="link" link="/test">
+        <Button view={BUTTONS.ACTION_ALT} type="link" link="/test">
           Action Alt button
         </Button>
 
-        <Button view="inverted" type="link" link="/test">
+        <Button view={BUTTONS.INVERTED} type="link" link="/test">
           Inverted button
         </Button>
 
-        <Button view="alt" type="link" link="/test">
+        <Button view={BUTTONS.ALT} type="link" link="/test">
           Alternative button
         </Button>
 
-        <Button view="transparent" type="link" link="/test">
+        <Button view={BUTTONS.TRANSPARENT} type="link" link="/test">
           <Icon icon="plus" />
         </Button>
       </React.Fragment>

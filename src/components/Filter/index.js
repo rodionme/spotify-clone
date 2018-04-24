@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './style.css';
+import Button from '../Button';
 import Icon from '../Icon';
 
 export default class Filter extends Component {
@@ -12,11 +13,11 @@ export default class Filter extends Component {
           <Icon icon="search" />
         </div>
 
-        <button className="filter__button" type="button">
+        <Button className="filter__button" type="button">
           <div className="filter__icon">
             <Icon icon="x" />
           </div>
-        </button>
+        </Button>
       </div>
     );
   }

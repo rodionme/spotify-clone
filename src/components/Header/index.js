@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropType from 'prop-types';
 import './style.css';
+import Button from '../Button';
+import { BUTTONS } from '../../constants/button-views';
 import Icon from '../Icon';
 
 export default class Header extends Component {
@@ -8,7 +10,7 @@ export default class Header extends Component {
     let { thumb, overhead, title, description, actions, additional } = this.props.header;
     let thumbClassName = thumb && thumb.isSmall ? ' header__thumb--small' : '';
     let followButton = actions && actions.isFollowing ? 'Following' : 'Follow';
-    let altButtonClassName = actions && actions.isFollowing ? ' button--action-alt' : '';
+    let buttonView = actions && actions.isFollowing ? BUTTONS.ACTION_ALT : BUTTONS.REGULAR;
     let altAdditionalClassName = additional.isAlt ? ' header__additional--alt' : '';
 
     return (
@@ -29,13 +31,19 @@ export default class Header extends Component {
             <div className="header__buttons">
               {!actions.isAlt && (
                 <React.Fragment>
-                  <button className="header__button button button--action">Play</button>
-                  <button className={`header__button button${altButtonClassName}`}>{followButton}</button>
+                  <Button className="header__button" view={BUTTONS.ACTION}>
+                    Play
+                  </Button>
+
+                  <Button className="header__button" view={buttonView}>
+                    {followButton}
+                  </Button>
                 </React.Fragment>
               )}
-              <button className="header__button button button--rounded">
+
+              <Button className="header__button" view={BUTTONS.ROUNDED}>
                 <Icon icon="more" />
-              </button>
+              </Button>
             </div>
 
             <div className={`header__additional${altAdditionalClassName}`}>
